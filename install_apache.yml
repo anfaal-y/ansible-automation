@@ -1,0 +1,11 @@
+- hosts: all
+
+  tasks:
+
+    - name: Install the Apache web server
+
+      apt:
+
+        name: apache2
+
+        state: present
