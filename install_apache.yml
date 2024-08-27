@@ -1,11 +1,15 @@
 - hosts: all
+  remote_user: user
   become: true
   tasks:
 
     - name: Install the Apache web server
-
       apt:
-
         name: apache2
-
         state: present
+
+    - name: enabling apache service
+      ansible.builtin.service:
+        name: apache2
+        enabled: true
+        state: started
