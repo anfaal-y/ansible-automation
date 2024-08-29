@@ -32,3 +32,16 @@
           - libapache2-mod-php
           - php-mysql
         state: present
+
+    - name: downloading wordpress
+      get_url:
+        url: https://wordpress.org/latest.tar.gz
+        dest: /var/www/html/
+
+    - name: extracting wordpress zip file
+      unarchive:
+        src: /var/www/html/latest.tar.gz
+        dest: /var/www/html/
+        copy: no
+
+
